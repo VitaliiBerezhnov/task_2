@@ -1,0 +1,21 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.all_list{
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.head{
+    margin-bottom: 30px;
+}
+.head h1{
+    font-family: 'Dosis', sans-serif;
+}
+.inputs{
+    display: flex;
+}
