@@ -6,16 +6,80 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 .all_list{
-    width: 200px;
+    width: 500px;
     margin: 0 auto;
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
 }
 .head{
     margin-bottom: 30px;
 }
 .head h1{
     font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
+.addBtm{
+    width: 25%;
+    border: none;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    cursor: pointer;
+}
+.addBtm:hover{
+    background: rgb(255, 223, 180)    
+}
+.myInput{
+    height: 30px;
+    width: 75%;
+    border: none;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 10px;
+    outline: none;   
 }
 .inputs{
     display: flex;
+    border: 1px solid black;   
+}
+.items_container{
+    margin-top: 50px; 
+    position: relative;
+}
+.items_container ul li{
+    margin-bottom: 5px;
+    list-style-type: none;
+    cursor: pointer;
+}
+.items_container ul li.checked{
+    color: black;
+    text-decoration: line-through
+}
+.forBtm{
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.clearBtm{  
+    display: block; 
+    width: 122px;
+    height: 30px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+}
+.clearBtm:hover {
+    background: rgb(255, 223, 180)
+}
+.close{
+    position: absolute;
+    padding: 2px 6px 2px 6px;
+    right: 0;
+    cursor: pointer;
+    color: black;
+}
+.close:hover{
+    background: rgb(255, 223, 180);
 }
