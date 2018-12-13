@@ -1,5 +1,4 @@
 define(function(){
-
     return function removeSpan (event) {
         
         var target = event.target;

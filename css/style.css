@@ -6,29 +6,82 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 .all_list{
-    width: 500px;
-    margin: 0 auto;
-    margin-top: 50px;
     display: flex;
-    flex-direction: column;
+}
+
+/*----------------------------------------- AddToDo*/
+#forBtmAdd{
+    position: fixed;
+}
+.addToDo{
+    position: relative; 
+    width: 50px;
+    height: 100vh;
+    border: none;
+    background: #884a4a;
+    cursor: pointer;
+    outline: none;
+}
+.addToDo:hover{
+    
+    background: #6e6e6e;
+}
+.addToDo span{
+    position: absolute; 
+    top: 42px;
+    left: 8px;
+    color: white;
+    font-size: 52px;
+}
+.allToDo{
+    margin: 50px;
+    display: flex;
+}
+
+/*----------------------------------------- ToDo*/
+.toDo{
+    margin-left: 75px;
+    width: 500px;
 }
 .head{
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 30px;
 }
 .head h1{
     font-family: 'Dosis', sans-serif;
-    text-align: center;
+    text-align: left;
+    text-transform: uppercase;
 }
-.addBtm{
-    width: 25%;
-    border: none;
-    font-size: 16px;
+.head button{
+    color: #6e6e6e;
+    border:none;
+    text-align: center;
+    font-size: 30px;
     font-family: 'Open Sans', sans-serif;
     outline: none;
     cursor: pointer;
+    background: white;  
+}
+.head button:hover{
+    color: black;
+}
+.inputs{
+    display: flex;
+    border-bottom: 1px solid black;   
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.addBtm{
+    border: none;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    outline: none;
+    cursor: pointer;
+    background: white;
 }
 .addBtm:hover{
-    background: rgb(255, 223, 180)    
+    color: #884a4a;
 }
 .myInput{
     height: 30px;
@@ -36,50 +89,56 @@ body{
     border: none;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
-    padding-left: 10px;
+    /*padding-left: 10px;*/
     outline: none;   
-}
-.inputs{
-    display: flex;
-    border: 1px solid black;   
 }
 .items_container{
     margin-top: 50px; 
     position: relative;
 }
 .items_container ul li{
+    position: relative;
     margin-bottom: 5px;
     list-style-type: none;
     cursor: pointer;
 }
 .items_container ul li.checked{
     color: black;
-    text-decoration: line-through
+    text-decoration: line-through;
 }
-.forBtm{
-    margin: 0 auto;
-    margin-top: 50px;
-}
-.clearBtm{  
-    display: block; 
-    width: 122px;
-    height: 30px;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-    border: 1px solid black;
-    outline: none;
-    cursor: pointer;
-}
-.clearBtm:hover {
-    background: rgb(255, 223, 180)
-}
+
+/*----------------------------------------- CloseLi*/
 .close{
     position: absolute;
-    padding: 2px 6px 2px 6px;
     right: 0;
+    padding: 2px 6px 2px 6px;
     cursor: pointer;
     color: black;
 }
 .close:hover{
     background: rgb(255, 223, 180);
+}
+
+/*----------------------------------------- ClearBtm*/
+.forBtm{
+    margin-top: 50px;
+    position: relative;
+    border-top: 1px solid black;
+}
+.clearBtm{  
+    position: absolute;
+    right: 0;
+    display: block; 
+    width: 122px;
+    height: 30px;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    text-align: right;
+    outline: none;
+    cursor: pointer;
+    background: white;
+}
+.clearBtm:hover {
+    color: #884a4a;
 }

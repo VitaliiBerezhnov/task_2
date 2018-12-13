@@ -4,6 +4,7 @@ requirejs(["scripts/doneTask", "scripts/removeSpan"], function(doneTask, removeS
     var addBtn = document.getElementById('input_button');
     var ul = document.getElementById('toDoList');
     var clearBtm = document.getElementById('clearBtm');
+    var clearList = document.getElementById('clearList');
 
 
     addBtn.onclick = function() {
@@ -22,7 +23,8 @@ requirejs(["scripts/doneTask", "scripts/removeSpan"], function(doneTask, removeS
         li.appendChild(span);
         ul.appendChild(li);  
 
-        task.value = '';   
+        task.value = '';
+        task.focus();   
     }
 
     ul.addEventListener ('click', removeSpan );
