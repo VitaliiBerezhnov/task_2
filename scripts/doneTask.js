@@ -4,7 +4,6 @@ define(function(){
         var target = event.target;
 
         if(target.tagName != "LI") return
-        target.classList.toggle("checked");
-        
-    }
+        target.classList.toggle("checked");   
+    };
 });

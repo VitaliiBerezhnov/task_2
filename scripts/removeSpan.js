@@ -5,7 +5,7 @@ define(function(){
 
         if(target.tagName != "SPAN") return
         var el = target.parentNode;   
-        el.parentNode.removeChild(el)   
-    }
+        el.parentNode.removeChild(el);   
+    };
 });
 
