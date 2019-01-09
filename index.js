@@ -1,37 +1,16 @@
-requirejs(["scripts/doneTask", "scripts/removeSpan"], function(doneTask, removeSpan) {
+requirejs(["scripts/addToDoList"], function(addToDoList){
 
-    var task = document.getElementById('input_text');
-    var addBtn = document.getElementById('input_button');
-    var ul = document.getElementById('toDoList');
-    var clearBtm = document.getElementById('clearBtm');
-    var clearList = document.getElementById('clearList');
+    var addToDo = document.getElementById('addToDo');
+    var allToDo = document.getElementById('allToDo');
+    var toDo = document.getElementById('toDo');
 
+    addToDoList(toDo);
 
-    addBtn.onclick = function() {
-        if(!task.value) return;
-
-        var li = document.createElement('li');
-        var textTask = document.createTextNode(task.value)
-
-        var span = document.createElement('span')
-        var text = document.createTextNode('\u2715')
-
-        span.className = 'close';
-        span.appendChild(text);
-
-        li.appendChild(textTask);
-        li.appendChild(span);
-        ul.appendChild(li);  
-
-        task.value = '';
-        task.focus();   
-    }
-
-    ul.addEventListener ('click', removeSpan );
-    ul.addEventListener ('click', doneTask );
-
-    clearBtm.onclick = function() {
-        ul.innerHTML = '';
-    };
+    addToDo.onclick = function(){
+        var newTask = toDo.cloneNode(true);
+        allToDo.appendChild(newTask)
+        addToDoList(newTask)
+    };   
 });
+
 
