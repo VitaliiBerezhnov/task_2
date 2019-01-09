@@ -8,8 +8,8 @@ define(function(require){
 
         var clearList = node.querySelector('#clearList');
         clearList.onclick = function(){ 
-                var allToDo = document.getElementById('allToDo'); 
-                allToDo.removeChild(node) 
+            var allToDo = document.getElementById('allToDo'); 
+            allToDo.removeChild(node) 
         };
             
         var task = node.querySelector('#input_text');
