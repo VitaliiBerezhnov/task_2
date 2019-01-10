@@ -1,4 +1,3 @@
-
 define(function(require){
 
     var removeSpan = require('scripts/removeSpan');
@@ -30,14 +29,15 @@ define(function(require){
 
             li.appendChild(textTask);
             li.appendChild(span);
-            ul.appendChild(li);  
+            ul.appendChild(li);
+            
+            span.addEventListener ('click', removeSpan );
+            li.addEventListener ('click', doneTask );
 
             task.value = '';
             task.focus();   
         };
 
-        ul.addEventListener ('click', removeSpan );
-        ul.addEventListener ('click', doneTask );
         ul.innerHTML = '';
 
         var clearBtm = node.querySelector('#clearBtm');
