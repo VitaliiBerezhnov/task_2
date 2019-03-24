@@ -1,8 +1,7 @@
 define(function(require){
 
-    var removeSpan = require('scripts/removeSpan');
-    var doneTask = require('scripts/doneTask');
-
+    var ItemFactory = require('scripts/ItemFactori');
+    
     return function addToDoList(node){
 
         var clearList = node.querySelector('#clearList');
@@ -13,26 +12,22 @@ define(function(require){
             
         var task = node.querySelector('#input_text');
         var ul = node.querySelector('#toDoList');
+        var description = node.querySelector('#desc')
+        var img = node.querySelector('#forImg')
 
         var addBtn = node.querySelector('#input_button');
+
         addBtn.onclick = function() {
-            if(!task.value) return;
+            if(!task.value || !description.value) return;
 
-            var li = document.createElement('li');
-            var textTask = document.createTextNode(task.value);
+            var item = ItemFactory({
+                title: task.value,
+                description: description.value,
+                image: img.value
 
-            var span = document.createElement('span');
-            var text = document.createTextNode('\u2715');
-
-            span.className = 'close';
-            span.appendChild(text);
-
-            li.appendChild(textTask);
-            li.appendChild(span);
-            ul.appendChild(li);
+            });
             
-            span.addEventListener ('click', removeSpan );
-            li.addEventListener ('click', doneTask );
+            item.create(ul)
 
             task.value = '';
             task.focus();   
