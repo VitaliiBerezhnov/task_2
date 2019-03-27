@@ -1,21 +1,21 @@
-define(function(require){
+define(function(require) {
 
     var ItemFactory = require('scripts/ItemFactori');
     
-    return function addToDoList(node){
+    return function addToDoList(node) {
 
-        var clearList = node.querySelector('#clearList');
-        clearList.onclick = function(){ 
-            var allToDo = document.getElementById('allToDo'); 
-            allToDo.removeChild(node) 
+        function selector(node, text) {
+            return node.querySelector(text);
         };
-            
-        var task = node.querySelector('#input_text');
-        var ul = node.querySelector('#toDoList');
-        var description = node.querySelector('#desc')
-        var img = node.querySelector('#forImg')
 
-        var addBtn = node.querySelector('#input_button');
+        var clearList = selector(node, '#clearList')
+        var task = selector(node, '#input_text');
+        var ul = selector(node, '#toDoList');
+        var description = selector(node, '#desc');
+        var img = selector(node, '#forImg');
+        var clearBtm = selector(node, '#clearBtm');
+        var nameTask = selector(node, '#nameTask'); 
+        var addBtn = selector(node, '#input_button');
 
         addBtn.onclick = function() {
             if(!task.value || !description.value) return;
@@ -24,23 +24,26 @@ define(function(require){
                 title: task.value,
                 description: description.value,
                 image: img.value
-
             });
             
             item.create(ul)
 
+            description.value ='';
             task.value = '';
+            img.value = '';
             task.focus();   
         };
-
-        ul.innerHTML = '';
-
-        var clearBtm = node.querySelector('#clearBtm');
+              
         clearBtm.onclick = function() {
             ul.innerHTML = '';
         };
-                        
-        var nameTask = node.querySelector('#nameTask');  
+
+        clearList.onclick = function() { 
+            var allToDo = selector(document, '#allToDo'); 
+            allToDo.removeChild(node) 
+        };
+
+        ul.innerHTML = '';                                 
         nameTask.focus();              
     };
 });
