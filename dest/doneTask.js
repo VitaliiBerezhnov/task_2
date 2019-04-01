@@ -1,0 +1,1 @@
+'use strict';define(function(){return function(t){t.target.classList.toggle('checked')}});

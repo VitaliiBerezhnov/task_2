@@ -1,0 +1,1 @@
+'use strict';define(function(){return function(e){var t=e.target.parentNode;t.parentNode.removeChild(t)}});

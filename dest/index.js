@@ -1,0 +1,1 @@
+'use strict';requirejs(['scripts/addToDoList'],function(o){var e=document.getElementById('addToDo'),t=document.getElementById('allToDo'),d=document.getElementById('toDo');o(d),e.onclick=function(){var e=d.cloneNode(!0);t.appendChild(e),o(e)}});

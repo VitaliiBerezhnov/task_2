@@ -17,6 +17,10 @@
   "homepage": "https://github.com/VitaliiBerezhnov/task_2#readme",
   "dependencies": {
     "ajv": "^6.10.0",
+    "ejs": "^2.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "express": "^4.16.4",
+    "node-static": "^0.7.11",
     "pkg": "^4.3.5"
   },
   "devDependencies": {
@@ -24,6 +28,8 @@
     "@babel/preset-env": "^7.4.2",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.16.0",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-uglify": "^3.0.2"
